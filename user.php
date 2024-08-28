@@ -15,10 +15,10 @@
 
     	echo $_SESSION['email'];
 ?>
-<div class="">
-	<form method="POST" action="" enctype="multipert/formdata">
+<div class="col-sm-12 col-md-6 col-xl-6 col-lg-6" style="margin: auto;">
+	<form method="POST" action="upload.php" enctype="multipart/form-data">
   <!-- Email input -->
-  <h3>Sign in</h3>
+  <h3>List your business</h3>
   <div data-mdb-input-init class="form-outline mb-4">
     <input type="text" name="pname" id="form2Example1" class="form-control" />
     <label class="form-label" for="form2Example1">Product name</label>
@@ -34,13 +34,13 @@
     <label class="form-label" for="form2Example2">Price</label>
   </div>
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="file" name="price" id="form2Example2" class="form-control" />
+    <input type="file" name="pimage" id="form2Example2" class="form-control" />
     <label class="form-label" for="form2Example2">Upload product</label>
   </div>
   
 
   <!-- Submit button -->
-  <button  type="submit" name="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+  <button  type="submit" name="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Upload</button>
 </form>
 
 </div>

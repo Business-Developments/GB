@@ -29,9 +29,32 @@
         </div>
     </nav>
     <div id="home">
-    	
+    	<h1 class="text-center">All listed business in india</h1>
     </div>
-
+    <?php 
+error_reporting(E_ALL);
+     // Connect to the database
+    $db = mysqli_connect("localhost", "root", "", "gbDevelopments");
+    $sql = "SELECT * FROM `product`";
+    $query = $db->query($sql);
+     ?>
+     <div class="row">
+     <?php   
+            while ($row = mysqli_fetch_assoc($query)) {
+   ?>
+  <div class="card col-sm-12 col-md-4 col-lg-3 col-xl-3" style="margin:auto;">
+  <img class="card-img-top" src="image/<?php echo $row['image']; ?>" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><?php echo $row['pname'];?></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="tel:<?php echo $data['mobile'];  ?>" class="btn btn-primary">Call Now!</a>
+     <a href="#" class="btn btn-primary"><?php echo "RS:".$row['price']." /- only"; ?></a>
+  </div>
+</div>
+<?php
+}
+?>
+</div>
 
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
