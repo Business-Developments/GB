@@ -11,10 +11,8 @@
     </style>
 </head>
 <body>
-<?php session_start();
-
-    	echo $_SESSION['email'];
-?>
+<?php session_start();?>
+<h1 class="text-center bg-dark text-white">Dashboard of <?php echo $_SESSION['email']; ?></h1>
 <div class="col-sm-12 col-md-6 col-xl-6 col-lg-6" style="margin: auto;">
 	<form method="POST" action="upload.php" enctype="multipart/form-data">
   <!-- Email input -->
