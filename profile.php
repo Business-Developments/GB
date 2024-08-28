@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,6 +97,7 @@ if (isset($_POST['submit'])) {
     $query = mysqli_query($db,$sql);
     	$row = mysqli_fetch_assoc($query);
         	if ($row['email']===$email and $row['password']===$pass) {
+        		$_SESSION['email'] = $email;
         		header("Location:user.php");
         	}else{echo "wrong data";}
         }
