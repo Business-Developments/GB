@@ -8,5 +8,5 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
 </head>
 <body>
-Enter Email: <form method="POST" action=""><input type="Email" name="Email" placeholder="Email"><input type="submit" name="submit" value="submit"></form>
+Enter Email: <form method="POST" action="otp.php"><input type="Email" name="Email" placeholder="Email"><input type="submit" name="submit" value="submit"></form>
 </body></html>
