@@ -18,21 +18,21 @@
   <!-- Email input -->
   <h3>List your business</h3>
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" name="pname" id="form2Example1" class="form-control" />
-    <label class="form-label" for="form2Example1">Product name</label>
+    <input type="text" name="pname" id="form2Example1" class="form-control" placeholder="Enter business name !" required />
+    <label class="form-label" for="form2Example1">Business name</label>
   </div>
 
   <!-- Password input -->
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" name="pdescription" id="form2Example2" class="form-control" />
+    <input type="text" name="pdescription" id="form2Example2" class="form-control" maxlength="150" placeholder="Description under 150 charecters only." required />
     <label class="form-label" for="form2Example2">Description</label>
   </div>
     <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" name="price" id="form2Example2" class="form-control" />
+    <input type="number" name="price" id="form2Example2" class="form-control" placeholder="Enter number only" required />
     <label class="form-label" for="form2Example2">Price</label>
   </div>
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="file" name="pimage" id="form2Example2" class="form-control" />
+    <input type="file" name="pimage" id="form2Example2" class="form-control" required />
     <label class="form-label" for="form2Example2">Upload product</label>
   </div>
   
