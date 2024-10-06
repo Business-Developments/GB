@@ -24,7 +24,7 @@
         }
     </style>
 </head>
-<body>
+<body bgcolor="black">
 <h1 style="color: red;text-align: center;background: black;border: 1px solid gray;">Global Business Development</h1>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="#">GBD PVT. LTD.</a><span class="text-white"> <sub>Your city, Your leads.</sub> </span>
@@ -49,6 +49,20 @@
      <h3 class="legend">Sign Up</h3>
      <br>
     <form method="POST" action="">
+        <!-- business name -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" name="business" id="form2Example1" class="form-control" />
+    <label class="form-label" for="form2Example1">Business Name</label>
+  </div>
+  <!-- business address -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" name="businessadres" id="form2Example1" class="form-control" />
+    <label class="form-label" for="form2Example1">Business Address</label>
+  </div>
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="number" name="pincode" id="form2Example1" class="form-control" />
+    <label class="form-label" for="form2Example1">Pincode</label>
+  </div>
   <!-- Email input -->
   <div data-mdb-input-init class="form-outline mb-4">
     <input type="email" name="email" id="form2Example1" class="form-control" />
@@ -111,6 +125,9 @@ if (isset($_POST['submit'])) {
       // Connect to the database
     $db = mysqli_connect("localhost", "root", "", "gbDevelopments");
     // Sanitize user inputs
+    $businessName = mysqli_real_escape_string($db,$_POST['business']);
+    $businessAddress = mysqli_real_escape_string($db,$_POST['businessadres']);
+    $pincode = mysqli_real_escape_string($db,$_POST['pincode']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $mobile = mysqli_real_escape_string($db, $_POST['mobile']);
     $pass = mysqli_real_escape_string($db, $_POST['password']);
@@ -123,7 +140,7 @@ if (isset($_POST['submit'])) {
     }
     
     // Prepare the SQL statement
-    $sql = "INSERT INTO `regData`(`email`, `mobile`, `password`) VALUES ('$email', '$mobile', '$pass')";
+    $sql = "INSERT INTO `regData`(`business_name`, `business_address`, `pincode`, `email`, `mobile`, `password`) VALUES ('$businessName', '$businessAddress', '$pincode','$email','$mobile','$pass')";
     
     // Execute the query
     $query = mysqli_query($db, $sql);

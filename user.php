@@ -1,3 +1,6 @@
+<?php session_start();
+if (isset($_SESSION['email'])) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,15 +14,14 @@
     </style>
 </head>
 <body>
-<?php session_start();?>
-<h1 class="text-center bg-dark text-white">Dashboard of </h1><?php echo $_SESSION['email']; ?>
+<h1 class="text-center bg-dark text-white">Dashboard of <a href="logout.php">Logout</a></h1><?php echo $_SESSION['email']; ?> 
 <div class="col-sm-12 col-md-6 col-xl-6 col-lg-6" style="margin: auto;">
 	<form method="POST" action="upload.php" enctype="multipart/form-data">
   <!-- Email input -->
   <h3>List your business</h3>
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" name="pname" id="form2Example1" class="form-control" placeholder="Enter business name !" required />
-    <label class="form-label" for="form2Example1">Business name</label>
+    <input type="text" name="pname" id="form2Example1" class="form-control" placeholder="Name of service or product !" required />
+    <label class="form-label" for="form2Example1">Product/service name</label>
   </div>
 
   <!-- Password input -->
@@ -44,3 +46,8 @@
 </div>
 </body>
 </html>
+<?php }else{
+  header("Location:profile.php");
+}?>
+
+

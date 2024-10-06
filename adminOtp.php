@@ -14,25 +14,12 @@
 		<input type="submit" name="submit" value="Go">
 	</form>
 </div>
-Otp valid for 20sec <div id='clock'></div>
+Otp valid for 2 min. <div id='clock'></div>
 </body>
 </html>
- <script>
-        function updateClock() {
-            const now = new Date();
-            let seconds = now.getSeconds();
-            seconds = seconds < 60 ? + seconds : seconds;
-            const timeString =  seconds;
-            document.getElementById('clock').textContent = timeString;
-        }
-        // Update the clock every second
-        setInterval(updateClock, 1000);
-
-        // Initial call to display the clock immediately
-        // updateClock();
-    </script>
+ 
 <?php
-header("Refresh: 20; url=adminlogout.php");
+header("Refresh: 120; url=adminlogout.php");
 if(isset($_POST['submit'])){
 	if ($_SESSION['otps']==$_POST['otp']) {
 		header( "Location:adminDash.php");

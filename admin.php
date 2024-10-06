@@ -12,6 +12,22 @@
     </style>
 </head>
 <body style="background: gray;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="index.php">GBD PVT. LTD.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="adminnotyfication.php"><span class="fas fa-bell" style="font-size: 20px;"></span><span style="font-weight:bold;color:red;border-radius: 50%;margin-left: -15px;"><?php echo 5; ?></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 <h1 style="color: red;text-align: center;" title="please dont try to make any annonimus bihaviour">Admin area</h1>
     <br>
    <div class="col-md-6 col-xl-6 col-lg-6 col-sm-12 p-3" style="border: 1px solid black;margin: auto;background:black;">

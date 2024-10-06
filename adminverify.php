@@ -44,7 +44,7 @@
          header( "refresh:1;url=adminOtp.php" );
       };
            } catch (Exception $e) {
-      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo} <a href='admin.php'>Back</a>";
       
   }
 ?>

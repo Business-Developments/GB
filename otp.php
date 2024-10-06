@@ -4,7 +4,7 @@
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
   
-  $recipientEmail=$_POST['Email'];  // Use a different variable name for the session email
+  $recipientEmail=$_SESSION['mail'];  // Use a different variable name for the session email
 
   //Import PHPMailer classes into the global namespace
   use PHPMailer\PHPMailer\PHPMailer;
@@ -41,7 +41,8 @@
       if ($mail->send()) {
         echo ' Otp has been sent to ' . $recipientEmail . " successfully.";
          $_SESSION['otps']=$rand;
-         /*header( "refresh:5;url=enterOtp.php" );*/
+         $_SESSION['email']=$recipientEmail;
+         header( "refresh:5;url=enterOtp.php" );
       };
            } catch (Exception $e) {
       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

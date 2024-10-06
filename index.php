@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
     <style type="text/css">
     	*{margin: 0;padding: 0; box-sizing: border-box;}
+        .card-img-top{
+            width: 100%;height:250px;object-fit: contain;
+        }
     </style>
 </head>
 <body>
@@ -28,11 +31,27 @@
                 <li class="nav-item">
                     <a class="nav-link" href="admin.php">Admin</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="notyfication.php"><span class="fas fa-bell" style="font-size: 20px;color: white;"></span><span style="font-weight:bold;color:red;border-radius: 50%;margin-left: -13px;"><?php echo 5; ?></span></a>
+                </li>
             </ul>
         </div>
     </nav>
+    <div class="container_fluid bg-dark text-center text-light p-4">
+        <h2 class="text-white">Find service provider's</h2>
+    <form>
+        <?php $pincode='743383'; ?>
+        <label for="fruits">Choose service provider :</label>
+        <select id="fruits" name="fruits">
+            <option value="acRepair">AC Repair</option>
+            <option value="pestcontrol">Pestcontrol</option>
+        </select>
+     <input type="number" name="pincode" placeholder="Enter area pincode">
+        <input type="submit" value="Submit">
+    </form>
+    </div>
     <div id="home">
-    	<h1 class="text-center">All listed business in india</h1>
+        <h1 class="text-center">All listed business in india</h1>
     </div>
     <?php 
 error_reporting(E_ALL);
@@ -46,7 +65,7 @@ error_reporting(E_ALL);
             while ($row = mysqli_fetch_assoc($query)) {
    ?>
   <div class="card col-sm-12 col-md-6 col-lg-4 col-xl-4" style="margin:auto;">
-  <img class="card-img-top" src="image/<?php echo $row['image']; ?>" alt="<?php echo $row['image']; ?>">
+  <img class="card-img-top" src="image/<?php echo $row['image']; ?>" alt="<?php echo $row['image']; ?>" />
   <div class="card-body">
     <h5 class="card-title"><?php echo $row['pname'];?></h5>
     <p class="card-text"><?php echo $row['pdescription'];?>.</p>

@@ -11,10 +11,10 @@
     	*{margin: 0;padding: 0; box-sizing: border-box;}
     </style>
 </head>
-<body>
+<body bgcolor="black">
 <h1 style="color: red;text-align: center;background: black;">Global Business Development</h1>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href="#">GBD PVT. LTD.</a>
+        <a class="navbar-brand" href="index.php">GBD PVT. LTD.</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,9 +22,6 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.php">Profile</a>
                 </li>
             </ul>
         </div>
@@ -93,13 +90,13 @@ if (isset($_POST['submit'])) {
     $pass = $_POST['password'];
     // Connect to the database
     $db = mysqli_connect("localhost", "root", "", "gbDevelopments");
-    $sql = "SELECT * FROM `regData`";
+    $sql = "SELECT * FROM `regData` WHERE `email`='$email' and `password`='$pass'";
     $query = mysqli_query($db,$sql);
     	$row = mysqli_fetch_assoc($query);
         	if ($row['email']===$email and $row['password']===$pass) {
         		$_SESSION['email'] = $email;
         		header("Location:user.php");
-        	}else{echo "wrong data";}
+        	}else{echo "Credential not matched";}
         }
 ?>
 </body>
